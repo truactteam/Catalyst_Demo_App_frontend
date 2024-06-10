@@ -1,0 +1,36 @@
+/* Reports.css */
+
+.table-custom {
+    width: 70%;
+    margin: 0 auto;
+    border-collapse: collapse;
+}
+
+.table-custom th,
+.table-custom td {
+    border: 1px solid #ddd;
+    padding: 8px;
+}
+
+.table-custom th {
+    background-color: #f2f2f2;
+    text-align: left;
+}
+
+.even-row {
+    background-color: #f9f9f9;
+}
+
+.odd-row {
+    background-color: #fff;
+}
+
+.action-icon {
+    margin-right: 5px;
+    cursor: pointer;
+    color: blue;
+}
+
+.action-icon:hover {
+    color: red;
+}

@@ -1,0 +1,84 @@
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+.main {
+    font-family: Arial, sans-serif;
+    background-color: #f2f2f2;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.otp-box{
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    width: 600px;
+    overflow: hidden;
+}
+
+
+.input-container {
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.box {
+    display: inline-block;
+    margin: 0 5px;
+    padding: 20px;
+    border-bottom: 1px solid #ccc;
+}
+
+.otp-input {
+    width: 40px;
+    height: 40px;
+    text-align: center;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.box:last-child {
+    border-bottom: none;
+}
+
+h2 {
+    margin: 0;
+    margin-bottom: 20px;
+    color: #333;
+    text-align: center;
+    padding: 10px 0;
+    background-color: #f2f2f2;
+}
+
+
+
+.verify-btn {
+    width: calc(100% - 40px);
+    background-color: #4caf50;
+    color: #fff;
+    padding: 10px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s;
+}
+
+.verify-btn:hover {
+    background-color: #45a049;
+}
+
+.error-message {
+    color: red;
+    margin-top: 10px;
+    text-align: center;
+}

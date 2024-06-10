@@ -1,24 +1,39 @@
-import logo from './logo.svg';
-import './App.css';
+import { HashRouter, Route, Routes, Navigate } from 'react-router-dom';
+import { Forms, Reports, Customer_Master, SignUp, Login, OTP,Items} from './components';
+import { useState } from 'react';
 
 function App() {
+  const [isAuthenticated, setIsAuthenticated] = useState(false);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <HashRouter>
+      <Routes>
+        {/* Route for login page */}
+        <Route path="" element={<Login/>} />
+        <Route path="/login" element={<Login/>} />
+          {/* Public routes */}
+          <Route path="/signup" element={<SignUp />} />
+        <Route path="/otp/:id" element={<OTP setIsAuthenticated={setIsAuthenticated} />} />
+       
+        {/* Conditional rendering of private routes */}
+        {isAuthenticated ? (
+          <>
+           <Route path="/forms" element={<Forms />} />
+            <Route path="/forms/:id" element={<Forms />} />
+            <Route path="/reports" element={<Reports />} />
+            <Route path="/customers" element={<Customer_Master />} />
+            <Route path="/items" element={<Items />} />
+          </>
+        ) : (
+          <Route
+            path="/*"
+            element={<Navigate to="/login" />} // Redirect to login if not authenticated
+          />
+        )}
+
+      
+      </Routes>
+    </HashRouter>
   );
 }
 
